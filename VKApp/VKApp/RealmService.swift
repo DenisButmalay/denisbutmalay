@@ -2,7 +2,7 @@
 //  RealmService.swift
 //  VKApp
 //
-//  Created by Ksenia Volkova on 17.04.2021.
+//  Created by Butmalay Denis  on 17.04.2021.
 //
 
 import Foundation
@@ -32,5 +32,14 @@ class RealmService {
         try realm.write {
             realm.add(items)
         }
+    }
+    
+    static func get<T: Object>(
+        type: T.Type,
+        configuration: Realm.Configuration = deleteIfMigration
+    ) throws -> Results<T> {
+        let realm = try Realm(configuration: configuration)
+        print(configuration.fileURL ?? "")
+        return realm.objects(T.self)
     }
 }

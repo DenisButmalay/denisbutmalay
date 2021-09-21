@@ -2,7 +2,7 @@
 //  FriendAlphabetHeaderView.swift
 //  VKApp
 //
-//  Created by Ksusha on 02.03.2021.
+//  Created by Butmalay Denis on 02.03.2021.
 //
 
 import UIKit

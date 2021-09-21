@@ -2,7 +2,7 @@
 //  NetworkService.swift
 //  VKApp
 //
-//  Created by Ksenia Volkova on 27.03.2021.
+//  Created by Butmalay Denis on 27.03.2021.
 //
 
 import Foundation
@@ -45,6 +45,28 @@ class NetworkService {
             }
         }
     }
+    
+    // 
+    func loadNews (completionHandler: @escaping ((Result<[News], Error>) -> Void)){
+        
+        let path = "/method/newsfeed.get"
+
+        AF.request(baseVkUrl + path, method: .get, parameters: baseParams).responseData { response in
+            switch response.result {
+           case let .success(data):
+               do {
+                    let newsResponse = try JSONDecoder().decode(NewsResopnse.self, from: data)
+                    let news = newsResponse.response.items
+                   completionHandler(.success(news))
+               } catch {
+                   completionHandler(.failure(error))
+               }
+            case let .failure(error):
+                completionHandler(.failure(error))
+           }
+       }
+    }
+    
     
     func loadFriends(completionHandler: @escaping ((Result<[User], Error>) -> Void)) {
         let path = "/method/friends.get"
@@ -134,19 +156,22 @@ class NetworkService {
             case let .failure(error):
                 completionHandler(.failure(error))
             case let .success(json):
-                var count = JSON(json)["response"]["count"].intValue
+//                var count = JSON(json)["response"]["count"].intValue
+                
                 let photosJSONArray = JSON(json)["response"]["items"].arrayValue
+                
+                
                 let photosFriend = photosJSONArray.map(VKPhoto.init)
-                if count > 50 {
-                    count = 50
-                }
-                for index in 0..<count {
-                    let photoSizeJSONArray = JSON(json)["response"]["items"][index]["sizes"].arrayValue
-                    let photoSizeArray = photoSizeJSONArray.map(VKPhotoSize.init)
-                    photosFriend[index].sizes = photoSizeArray
-                    photosFriend[index].count = count
-                    
-                }
+//                if count > 50 {
+//                    count = 50
+//                }
+//                for index in 0..<count {
+//                    let photoSizeJSONArray = JSON(json)["response"]["items"][index]["sizes"].arrayValue
+//                    let photoSizeArray = photoSizeJSONArray.map(VKPhotoSize.init)
+////                    photosFriend[index].sizes = photoSizeArray
+////                    photosFriend[index].count = count
+//
+//                }
                 completionHandler(.success(photosFriend))
             }
         }
@@ -208,5 +233,6 @@ class NetworkService {
             }
         }
     }
-
+    
+    
 }

@@ -2,7 +2,7 @@
 //  LikeView.swift
 //  VKApp
 //
-//  Created by Ksusha on 01.03.2021.
+//  Created by Butmalay Denis on 01.03.2021.
 //
 
 import UIKit

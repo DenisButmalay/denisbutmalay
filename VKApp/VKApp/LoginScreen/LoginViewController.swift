@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  VKApp
 //
-//  Created by Ksusha on 12.02.2021.
+//  Created by Butmalay Denis on 12.02.2021.
 // 
 
 

@@ -2,7 +2,7 @@
 //  Session.swift
 //  VKApp
 //
-//  Created by Ksenia Volkova on 21.03.2021.
+//  Created by  Butmalay Denis on 21.03.2021.
 //
 
 import Foundation

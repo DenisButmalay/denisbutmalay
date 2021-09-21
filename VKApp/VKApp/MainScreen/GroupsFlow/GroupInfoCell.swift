@@ -2,7 +2,7 @@
 //  GroupCell.swift
 //  VKApp
 //
-//  Created by Ksusha on 23.02.2021.
+//  Created by Butmalay Denis on 23.02.2021.
 //
 
 import UIKit

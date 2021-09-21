@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17B0DCFD2635768200437BB0 /* Questions in Resources */ = {isa = PBXBuildFile; fileRef = 17B0DCFC2635768200437BB0 /* Questions */; };
 		2B1CC20DEAB2A0065C7A4EB4 /* Pods_VKApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E82257567DC96E78D59955BD /* Pods_VKApp.framework */; };
 		614EDFBB25DA9105003B6209 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614EDFBA25DA9105003B6209 /* AppDelegate.swift */; };
 		614EDFBD25DA9105003B6209 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614EDFBC25DA9105003B6209 /* SceneDelegate.swift */; };
@@ -63,6 +64,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		17B0DCFC2635768200437BB0 /* Questions */ = {isa = PBXFileReference; lastKnownFileType = text; path = Questions; sourceTree = "<group>"; };
 		614EDFB725DA9105003B6209 /* VKApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VKApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		614EDFBA25DA9105003B6209 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		614EDFBC25DA9105003B6209 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 				614EDFBC25DA9105003B6209 /* SceneDelegate.swift */,
 				614EDFC325DA9108003B6209 /* Assets.xcassets */,
 				614EDFC525DA9109003B6209 /* LaunchScreen.storyboard */,
+				17B0DCFC2635768200437BB0 /* Questions */,
 			);
 			path = VKApp;
 			sourceTree = "<group>";
@@ -371,6 +374,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				614EDFC725DA9109003B6209 /* LaunchScreen.storyboard in Resources */,
+				17B0DCFD2635768200437BB0 /* Questions in Resources */,
 				61D4935725EF8E2600BC10BF /* GroupRichCell.xib in Resources */,
 				61D921D525F412FC00C0DD6A /* NewsRichCell.xib in Resources */,
 				614EDFC425DA9109003B6209 /* Assets.xcassets in Resources */,

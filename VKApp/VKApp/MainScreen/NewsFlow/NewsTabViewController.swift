@@ -2,22 +2,32 @@
 //  NewsTabViewController.swift
 //  VKApp
 //
-//  Created by Ksusha on 06.03.2021.
+//  Created by Butmalay Denis on 06.03.2021.
 //
 
 import UIKit
 
 class NewsTabViewController: UITableViewController {
-
-    var addedNews = [
-        News(name: "Новость первая", mainPic: UIImage(named: "bears")!, isLiked: false),
-        News(name: "Новость вторая", mainPic: UIImage(named: "bears")!, isLiked: false),
-        News(name: "Новость третья", mainPic: UIImage(named: "bears")!, isLiked: false),
-        News(name: "Новость четвертая", mainPic: UIImage(named: "bears")!, isLiked: false),
-        News(name: "Новость пятая", mainPic: UIImage(named: "bears")!, isLiked: false),
-        News(name: "Новость шестая", mainPic: UIImage(named: "bears")!, isLiked: false),
-        News(name: "Новость седьмая", mainPic: UIImage(named: "bears")!, isLiked: false),
-    ]
+    private let networkSession = NetworkService(token: Session.shared.token)
+    //var 
+    var addedNews = [News] ()
+    var sectionedGroups: [NewsResopnse] {
+        addedNews.reduce(into: []) {
+            currentSectionNews, group in
+            guard let firstLetter = News.post_type.first else { return }
+            
+            if let currentSectionNewsFirstLetterIndex = currentSectionNews.firstIndex(where: { $0.title == firstLetter }) {
+                
+                let oldSection = currentSectionNews[currentSectionNewsFirstLetterIndex]
+                let updatedSection = NewsResopnse(title: firstLetter, news: oldSection.news + [news])
+                currentSectionNews[currentSectionNewsFirstLetterIndex] = updatedSection
+                
+            } else {
+                let newSection = NewsResopnse(title: firstLetter, news: [news])
+                currentSectionNews.append(newSection)
+            }
+        }.sorted()
+    }
                 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +50,7 @@ class NewsTabViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
        if editingStyle == .delete {
-        print("Remove at index \(indexPath.row) with name \(addedNews[indexPath.row].name) ")
+        print("Remove at index \(indexPath.row) with name \(addedNews[indexPath.row].post_type) ")
            addedNews.remove(at: indexPath.row)
            tableView.deleteRows(at: [indexPath], with: .fade)
            //print(addedNews)
