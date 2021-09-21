@@ -2,7 +2,7 @@
 //  UserResponse.swift
 //  VKApp
 //
-//  Created by Ksenia Volkova on 03.04.2021.
+//  Created by Butmalay Denis on 03.04.2021.
 //
 
 import UIKit

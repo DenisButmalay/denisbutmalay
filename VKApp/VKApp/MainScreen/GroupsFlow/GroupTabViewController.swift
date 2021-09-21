@@ -2,7 +2,7 @@
 //  GroupTabViewController.swift
 //  VKApp
 //
-//  Created by Ksusha on 24.02.2021.
+//  Created by Butmalay Denis on 24.02.2021.
 //
 
 import UIKit
@@ -83,6 +83,7 @@ class GroupTabViewController: UIViewController, UISearchResultsUpdating {
             switch result {
             case let .success(groups):
                 self?.addedGroups = groups
+                try? RealmService.save(items: groups, configuration: RealmService.deleteIfMigration, update: .modified)
                 self?.tableView.reloadData()
             case let .failure(error):
                 print(error)

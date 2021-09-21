@@ -2,7 +2,7 @@
 //  NewsRichCell.swift
 //  VKApp
 //
-//  Created by Ksusha on 03.03.2021.
+//  Created by Butmalay Denis on 03.03.2021.
 //
 
 import UIKit
@@ -43,10 +43,11 @@ class NewsRichCell: UITableViewCell {
     }
     
     public func configure(with news: News) {
-        newsNameLabel.text = String(describing: news.name)
-        newsIconImageView.image = news.mainPic
+        newsNameLabel.text = String(describing: news.post_type)
+        newsIconImageView.kf.setImage(with: news.NewsPhotoUrl)
+      
         print("NewsRichCell \(newsNameLabel.text ?? "TEST")")
-        //print("NewsRichCell \(likeButton.numberOfSegments)")
-        //print("NewsRichCell \(likeButton.selectedSegmentIndex)")
+        print("NewsRichCell \(likeButton.numberOfSegments)")
+        print("NewsRichCell \(likeButton.selectedSegmentIndex)")
     }
 }

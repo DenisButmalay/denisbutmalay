@@ -2,7 +2,7 @@
 //  NewsDetailController.swift
 //  VKApp
 //
-//  Created by Ksusha on 13.03.2021.
+//  Created by Butmalay Denis on 13.03.2021.
 //
 
 import UIKit

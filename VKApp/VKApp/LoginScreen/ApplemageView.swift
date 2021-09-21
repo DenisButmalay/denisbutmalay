@@ -2,7 +2,7 @@
 //  AppleImageView.swift
 //  VKApp
 //
-//  Created by Ksusha on 11.03.2021.
+//  Created by Butmalay Denis on 11.03.2021.
 //
 
 import UIKit
