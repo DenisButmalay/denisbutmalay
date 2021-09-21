@@ -46,6 +46,7 @@ class NetworkService {
         }
     }
     
+    // 
     func loadNews (completionHandler: @escaping ((Result<[News], Error>) -> Void)){
         
         let path = "/method/newsfeed.get"

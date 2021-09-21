@@ -9,7 +9,7 @@ import UIKit
 
 class NewsTabViewController: UITableViewController {
     private let networkSession = NetworkService(token: Session.shared.token)
-    
+    //var 
     var addedNews = [News] ()
     var sectionedGroups: [NewsResopnse] {
         addedNews.reduce(into: []) {

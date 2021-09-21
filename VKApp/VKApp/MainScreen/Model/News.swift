@@ -93,7 +93,7 @@ struct NewsSection: Comparable {
 }
 
 
-
+// NewsResponse - mb comprable
 
 
 
